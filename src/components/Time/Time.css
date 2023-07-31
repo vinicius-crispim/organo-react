@@ -19,3 +19,18 @@
     gap: 28px;
     flex-wrap: wrap;
 }
+
+.time button{
+    background-color: #ff0000;
+    font-size: 18px;
+    padding: 24px;
+    border:none;
+    cursor: pointer;
+    color: #fff;
+    margin: 12px 0;
+}
+
+.time button:hover{
+    transition: .3s;
+    background-color: #dd2420;
+}

@@ -2,10 +2,11 @@ import { useState } from 'react';
 import Banner from './components/Banner/Banner';
 import Formulario from './components/Formulario/Formulario';
 import Time from './components/Time';
+import Rodape from './components/Rodape';
 
 function App() {
 
-  const times = [
+  const [times, setTimes] = useState([
     {
     nome: 'Programação',
     corPrimaria: '#57C278',
@@ -41,26 +42,36 @@ function App() {
     corPrimaria: '#FF8A29',
     corSecundaria: '#FFEEDF'
     }
-  ]
+  ])
 
   const [colaboradores, setColaborados] = useState([])
 
   const aoCadastrado = (colaborador) => {
-
     setColaborados([...colaboradores, colaborador]);
+  }
+
+  const aoExcluirTime = (time) => {
+    console.log(time)
+    console.log(times)
+      setTimes(times.filter(t => t.nome !== time.nome));
   }
 
   return (
     <div className="App">
       <Banner />
-      <Formulario times={times.map(t => t.nome)} aoCadastrado={colaborador => aoCadastrado(colaborador)}/>
+      <Formulario times={times.map(t => t.nome)} 
+      aoCadastrado={colaborador => aoCadastrado(colaborador)}/>
 
       {times.map(t => <Time 
       key={t.nome} 
       nome={t.nome} 
       corPrimaria={t.corPrimaria} 
       corSecundaria={t.corSecundaria}
-      colaboradores={colaboradores.filter(c => c.time === t.nome)}/>)}
+      colaboradores={colaboradores.filter(c => c.time === t.nome)}
+      aoExcluirTime={time => aoExcluirTime(time)}
+      />)}
+
+      <Rodape />
     
     </div>
   );

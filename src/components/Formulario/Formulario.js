@@ -5,7 +5,6 @@ import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css'
 
 const Formulario = (props) =>{
-
     const aoSalvar = (event) => {
         event.preventDefault();
         props.aoCadastrado({
