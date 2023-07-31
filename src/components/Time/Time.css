@@ -1,7 +1,7 @@
 .time {
     text-align: center;
     padding: 32px;
-
+    
 }
 
 .time h3 {
@@ -9,4 +9,13 @@
     border-bottom: 4px solid;
     display: inline-block;
     padding-bottom: 8px;
+}
+
+.time .colaboradores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 32px 0;
+    gap: 28px;
+    flex-wrap: wrap;
 }
