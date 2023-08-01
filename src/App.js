@@ -51,9 +51,8 @@ function App() {
   }
 
   const aoExcluirTime = (time) => {
-    console.log(time)
-    console.log(times)
-      setTimes(times.filter(t => t.nome !== time.nome));
+    //Excluindo os colaboradores faz com que a seção do time suma
+    setColaborados(colaboradores.filter(c => c.time !== time.nome))
   }
 
   return (
