@@ -50,6 +50,11 @@ function App() {
     setColaborados([...colaboradores, colaborador]);
   }
 
+  const aoCadastradoTime = (time) => {
+      setTimes([...times, time])
+      console.log(times)
+  }
+
   const aoExcluirTime = (time) => {
     //Excluindo os colaboradores faz com que a seção do time suma
     setColaborados(colaboradores.filter(c => c.time !== time.nome))
@@ -59,7 +64,9 @@ function App() {
     <div className="App">
       <Banner />
       <Formulario times={times.map(t => t.nome)} 
-      aoCadastrado={colaborador => aoCadastrado(colaborador)}/>
+      aoCadastrado={colaborador => aoCadastrado(colaborador)}
+      aoCadastradoTime={time =>aoCadastradoTime(time)}
+      />
 
       {times.map(t => <Time 
       key={t.nome} 
